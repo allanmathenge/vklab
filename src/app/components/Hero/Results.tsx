@@ -2,7 +2,7 @@
 import dynamic from "next/dynamic"
 import Image from "next/image"
 import React from "react"
-// import HomePageMol from "../MolecularViewer/HomePageMol"
+import HomePageMol from "../MolecularViewer/HomePageMol"
 const MoleculeViewer = dynamic(() => import("../MolecularViewer/MoleculeViewer"))
 const ChemicalFamily = dynamic(() => import("../MolecularViewer/ChemicalFamily"))
 
@@ -66,7 +66,7 @@ const Results = () => {
                 <p className="text-sm font-thin ">The 2D Visual architecture and the chirality of molecules</p>
                 <div className="flex gap-2">
                     <div className="w-[72%] shadow rounded-sm p-0">
-                        {/* <HomePageMol /> */}
+                        <HomePageMol />
                     </div>
                     <div className="shadow h-full w-full p-1 overflow-hidden flex flex-col gap-2">
                         <input 
