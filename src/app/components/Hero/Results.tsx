@@ -2,7 +2,7 @@
 import dynamic from "next/dynamic"
 import Image from "next/image"
 import React from "react"
-import HomePageMol from "../MolecularViewer/HomePageMol"
+// import HomePageMol from "../MolecularViewer/HomePageMol"
 const MoleculeViewer = dynamic(() => import("../MolecularViewer/MoleculeViewer"))
 const ChemicalFamily = dynamic(() => import("../MolecularViewer/ChemicalFamily"))
 
@@ -19,12 +19,13 @@ const Results = () => {
                 <div className="flex flex-col sm:flex-row justify-between items-center">
                     <div className="p-1">
                         <Image 
-                            src={"/ChemicalFamily.webp"}
+                            src={"/cfamily.jpg"}
                             alt="Chemical Families" 
                             className="max-w-[200px] h-[200px] rounded-full border-2 border-[#5b748a]" 
-                            width={240} 
+                            width={240}
                             height={240}
-                            priority
+                            placeholder="blur"
+                            blurDataURL={'/cfamily.jpg'}
                         />
                     </div>
 
@@ -65,7 +66,7 @@ const Results = () => {
                 <p className="text-sm font-thin ">The 2D Visual architecture and the chirality of molecules</p>
                 <div className="flex gap-2">
                     <div className="w-[72%] shadow rounded-sm p-0">
-                        <HomePageMol />
+                        {/* <HomePageMol /> */}
                     </div>
                     <div className="shadow h-full w-full p-1 overflow-hidden flex flex-col gap-2">
                         <input 
@@ -73,7 +74,8 @@ const Results = () => {
                             className="border text-[14px] rounded focus:outline-blue-400 p-1"
                             placeholder="Select compound ..."/>
                         <div className="flex flex-col gap-1 text-[12px]">
-                            <p className="">Name: Water</p>
+                            <p className="">Common name: Water</p>
+                            <p className="">IUPAC name: {"!"}</p>
                             <p className="">Formular: H2O</p>
                             <p className="">Weight: 18</p>
                         </div>
@@ -98,7 +100,8 @@ const Results = () => {
                                 className="border text-[14px] rounded focus:outline-blue-400 p-1"
                                 placeholder="Select compound ..."/>
                             <div className="flex flex-col gap-1 text-[12px]">
-                                <p className="">Name: <span className="text-slate-600">Caffeine</span></p>
+                                <p className="">Common name: <span className="text-slate-600">Caffeine</span></p>
+                                <p className="">IUPAC name: <span className="text-slate-600">{"!"}</span></p>
                                 <p className="">Formular: <span className="text-slate-600"> C3N2H6</span></p>
                                 <p className="">Weight: <span className="text-slate-600">70</span></p>
                             </div>
@@ -121,7 +124,8 @@ const Results = () => {
                                 className="border text-[14px] rounded focus:outline-blue-400 p-1"
                                 placeholder="Select compound ..."/>
                             <div className="flex flex-col gap-1 text-[12px]">
-                                <p className="">Name: <span className="text-slate-600">Caffeine</span></p>
+                                <p className="">Common Name: <span className="text-slate-600">Caffeine</span></p>
+                                <p className="">IUPAC Name: <span className="text-slate-600">{"!"}</span></p>
                                 <p className="">Formular: <span className="text-slate-600"> C3N2H6</span></p>
                                 <p className="">Weight: <span className="text-slate-600">70</span></p>
                             </div>

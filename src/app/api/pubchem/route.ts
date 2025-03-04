@@ -1,5 +1,4 @@
 
-
 import { NextResponse } from "next/server";
 
 const PUBCHEM_API_BASE = 'https://pubchem.ncbi.nlm.nih.gov/rest/pug'
@@ -18,12 +17,10 @@ export async function GET(request: Request) {
             headers: { 'Content-Type': 'application/json'},
             cache: 'force-cache'
         })
-        if (!response.ok) throw new Error('Failed to fetch data')
+        if (!response.ok) throw new Error(`${compoundName} was not found!`)
         const data = await response.json()
         return NextResponse.json(data)
     } catch (error) {
         if (error instanceof Error) return NextResponse.json({ error: error.message }, { status: 500 })
     }
 }
-
-
