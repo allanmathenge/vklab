@@ -3,6 +3,7 @@ import React from "react"
 import { useCompound } from "../context/CompounContext"
 import { useSearchParams } from "next/navigation"
 import StructureViewer from "../components/MolecularViewer/StructureViewer"
+import { Suspense } from 'react'
 
 const Search = () => {
   const searchParams = useSearchParams()
@@ -13,6 +14,7 @@ const Search = () => {
 
   return (
     <section>
+    <Suspense>
       {data?.error && <p className="text-red-500">{`No ${data.error}`}</p>}
       {
         data?.PC_Compounds && (
@@ -75,6 +77,7 @@ const Search = () => {
           </ul>
         )
       }
+    </Suspense>
     </section>
   )
 }
